@@ -3,10 +3,11 @@ package com.usermportal.ipaywithinterface;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.ipay.iPaycheckout.PaymentActivity;
 
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button test_button = (Button) findViewById(R.id.test_button);
         context = this;
-        final String amounts = "100";
+        final String amounts = "1";
         final String phones = "070000000";
         final String emails = "example@example.com";
 
@@ -34,18 +35,18 @@ public class MainActivity extends AppCompatActivity {
     {
         //data to send to ipay
         String live             = "0";
-        String oid              = "";
+        String oid              = "2020001"; // oid should be unique
         String mer              = ""; //merchant name
-        String amount           = amounts;//amounts;
-        String phone_number     = phones;
-        String email            = emails;
+        String amount           = "1";//amounts;
+        String phone_number     = "0722123456";
+        String email            = "test@abc.com"; // put your email here
         String vid              = "demo"; //Vendor ID
         String curr             = "KES"; //or USD
         String cst              = "1"; //email notification
         String crl              = "0";
         String autopay          = "1";
-        String cbk              = "https://exmple.com/payment/ipay.php";
-        String security_key     = "demoCHANED";
+        String cbk              = "https://localhost/ipayandroidsample/success.php"; // this is your callback
+        String security_key     = "demoCHANGED";    
         /** can pass extra param below **/
         String p1               = "";
         String p2               = "";
@@ -53,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
         String p4               = "";
 
         /**channel setting (1-sets on && 0-sets off)**/
-        String mpesa_status    = "1";
-        String mbonga_status   = "1";
+        String mpesa_status    = "0";
+        String mbonga_status   = "0";
         String airtel_status   = "1";
         String easy_status     = "1";
         String visa_status     = "1";
